@@ -10,7 +10,7 @@ const Education = (): JSX.Element => {
     },
     ];
     return (
-        <Bounded className="bg-neutral-500">
+        <Bounded className="bg-slate-800">
             <Heading as="h2" size="lg">
                 {'Education'}
             </Heading>

@@ -10,7 +10,7 @@ import Button from "../Button";
 export default function NavBar() {
     const [open, setOpen] = useState(false);
     const pathname = usePathname();
-    const navItems = [{ label: 'About', link: '/about' }];
+    const navItems = [{ label: 'About', link: '/about' }, { label: 'Projects', link: '/projects' }, { label: 'Skills', link: '/skills' }];
 
     return (
         <nav aria-label="Main navigation">

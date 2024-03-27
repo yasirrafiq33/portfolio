@@ -10,10 +10,13 @@ import Heading from "@/components/Heading";
 
 gsap.registerPlugin(ScrollTrigger);
 
+type TechListProps = {
+    heading: string;
+    list: string[];
+};
 
-const TechList = (): JSX.Element => {
+const TechList: React.FC<TechListProps> = ({ heading, list }): JSX.Element => {
     const component = useRef(null);
-    const techList = ['JavaScript', 'NodeJs', 'NestJs', 'NextJs', 'ReactJs', 'Angular', 'MySql', 'MongoDb'];
 
     useLayoutEffect(() => {
         let ctx = gsap.context(() => {
@@ -49,17 +52,30 @@ const TechList = (): JSX.Element => {
         return () => ctx.revert(); // cleanup!
     }, []);
 
+    const generateRandomHashColor = (): string => {
+        // Generate random RGB values
+        const r = Math.floor(Math.random() * 156) + 100; // Range: 100-255
+        const g = Math.floor(Math.random() * 156) + 100; // Range: 100-255
+        const b = Math.floor(Math.random() * 156) + 100; // Range: 100-255
+
+        // Convert RGB values to hex format
+        const hexColor = `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
+
+        return hexColor;
+    }
+
+
     return (
         <section
-            className="wrapper overflow-hidden bg-black"
+            className="wrapper overflow-hidden bg-slate-900"
             ref={component}>
             <Bounded as="div">
-                <Heading size="xl" className="mb-8" as="h2">
-                    {'What I use'}
+                <Heading size="xl" className="mb-8 text-center" as="h2">
+                    {heading}
                 </Heading>
             </Bounded>
 
-            {techList.map((tech_name, index) => (
+            {list.map((tech_name, index) => (
                 <div
                     key={index}
                     className="tech-row mb-8 flex items-center justify-center gap-4 text-slate-700"
@@ -87,18 +103,5 @@ const TechList = (): JSX.Element => {
         </section>
     );
 };
-
-function generateRandomHashColor(): string {
-    // Generate random RGB values
-    const r = Math.floor(Math.random() * 156) + 100; // Range: 100-255
-    const g = Math.floor(Math.random() * 156) + 100; // Range: 100-255
-    const b = Math.floor(Math.random() * 156) + 100; // Range: 100-255
-
-    // Convert RGB values to hex format
-    const hexColor = `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
-
-    return hexColor;
-}
-
 
 export default TechList;

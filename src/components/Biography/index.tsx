@@ -2,8 +2,6 @@ import Avatar from "@/components/Avatar";
 import Bounded from "@/components/Bounded";
 import Button from "@/components/Button";
 import Heading from "@/components/Heading";
-import TechList from "../TechList";
-
 
 const Biography = (): JSX.Element => {
     return (
@@ -39,7 +37,6 @@ const Biography = (): JSX.Element => {
                     />
                 </div>
             </Bounded>
-            <TechList />
         </>
     );
 };

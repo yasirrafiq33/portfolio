@@ -28,7 +28,7 @@ const Experience = (): JSX.Element => {
     }
     ];
     return (
-        <Bounded className="bg-rose-950">
+        <Bounded className="bg-slate-800">
             <Heading as="h2" size="lg">
                 {'Experiences'}
             </Heading>

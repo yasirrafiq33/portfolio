@@ -8,7 +8,7 @@ import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa6";
 export default async function Footer() {
     const navItems = [{ label: 'About', link: '/about' }, { label: 'Projects', link: '/projects' }];
     return (
-        <Bounded as="footer" className="text-slate-600">
+        <Bounded as="footer" className="bg-black text-slate-600">
             <div className="container mx-auto mt-20 flex flex-col items-center justify-between gap-6 py-8 sm:flex-row ">
                 <div className="name flex flex-col items-center justify-center gap-x-4 gap-y-2 sm:flex-row sm:justify-self-start">
                     <Link
