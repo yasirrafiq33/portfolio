@@ -72,15 +72,15 @@ export default function Avatar({
     return (
         <div ref={component} className={clsx("relative w-full", className)}>
             <div
-                className="avatar aspect-square overflow-hidden rounded-3xl border-2 border-slate-700 opacity-0"
+                className="avatar overflow-hidden rounded-3xl border-2 border-slate-700 opacity-0"
                 style={{ perspective: "500px", perspectiveOrigin: "150% 150%" }}
             >
                 <Image
                     src={'/avatar/yasir.jpg'}
-                    width={500}
-                    height={500}
+                    width={300}
+                    height={300}
                     alt="Picture of the author"
-                    className="avatar-image h-full w-full object-fill"
+                    className="avatar-image w-full object-fill"
                 />
                 <div className="highlight absolute inset-0 hidden w-full scale-110 bg-gradient-to-tr from-transparent via-white to-transparent opacity-0 md:block"></div>
             </div>

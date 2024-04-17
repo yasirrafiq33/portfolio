@@ -1,6 +1,7 @@
 import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";
 import Image from "next/image";
+import { BiGame } from "react-icons/bi";
 
 const Projects = (): JSX.Element => {
     const projects = [{
@@ -25,25 +26,29 @@ const Projects = (): JSX.Element => {
         title: 'Apexchat',
         logo: '/logos/apexchat.png',
         company: 'Venturedive',
-        description: "Widget based application that provides chat services to different companies. The widget lands on any web portal for chat communication."
+        description: "Widget based application that provides chat services to different companies. The widget lands on any web portal for chat communication.",
+        bg:'white'
     },
     {
         title: "The Children's Place",
         company: 'Venturedive',
         logo: '/logos/childrenplace.png',
-        description: "Shopify for some specific countries and brands. I worked there as a front-end engineer using Reactjs as the main library."
+        description: "Shopify for some specific countries and brands. I worked there as a front-end engineer using Reactjs as the main library.",
+        bg:'white'
     },
     {
         title: 'Ekomi Voe',
         logo: '/logos/ekomivoe.png',
         company: 'Coeus Solutions Gmbh',
-        description: "Developed front -end module for ekomi voe to know about employees interest,  mood and reviews about the company. Voice of employee (VOE) is self descriptive."
+        description: "Developed front -end module for ekomi voe to know about employees interest,  mood and reviews about the company. Voice of employee (VOE) is self descriptive.",
+        bg:'white'
     },
     {
         title: 'getBravio.io',
         logo: '/logos/bravo.png',
         company: 'Coeus Solutions Gmbh',
-        description: "Rewards based on OKRs, interactive web interface with strong back-end architecture. Defined OKRs against activities."
+        description: "Rewards based on OKRs, interactive web interface with strong back-end architecture. Defined OKRs against activities.",
+        bg:'white'
     },
     {
         title: 'Covetme',
@@ -79,7 +84,9 @@ const Projects = (): JSX.Element => {
                     <div className="flex md:justify-end sm:justify-start md:items-start">
                         {item.logo && <Image src={item.logo || ''} width={200}
                             height={200}
-                            alt="Company Logo" />}
+                            alt="Company Logo"
+                            className={`bg-${item.bg}`}
+                            />}
                     </div>
 
                 </div>
